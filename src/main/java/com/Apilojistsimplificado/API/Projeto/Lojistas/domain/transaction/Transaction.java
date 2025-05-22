@@ -9,10 +9,6 @@ import java.time.LocalDateTime;
 
 @Entity(name="transactions")
 @Table(name="transactions")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of="id")
 public class Transaction {
     @Id
@@ -30,5 +26,58 @@ public class Transaction {
     private User receiver;
 
     private LocalDateTime timesTanp;
+
+    public Transaction(){
+
+    }
+
+    public Transaction(Long id, BigDecimal amount, User sender, User receiver, LocalDateTime timesTanp) {
+        this.id = id;
+        this.amount = amount;
+        this.sender = sender;
+        this.receiver = receiver;
+        this.timesTanp = timesTanp;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public User getSender() {
+        return sender;
+    }
+
+    public void setSender(User sender) {
+        this.sender = sender;
+    }
+
+    public User getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(User receiver) {
+        this.receiver = receiver;
+    }
+
+    public LocalDateTime getTimesTanp() {
+        return timesTanp;
+    }
+
+    public void setTimesTanp(LocalDateTime timesTanp) {
+        this.timesTanp = timesTanp;
+    }
+
 
 }
